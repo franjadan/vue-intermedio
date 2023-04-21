@@ -12,3 +12,13 @@
         props: ['titulo'],
     }
 </script>
+
+<style lang="scss" scoped>
+    h3{
+        color: $corporativo;
+    }
+
+    button{
+        background-color: $alternativo;
+    }
+</style>
