@@ -1,15 +1,18 @@
 <template>
   <div id="app">
       <Navegacion></Navegacion>
+      <!--<BaseForm></BaseForm>-->
     <router-view/>
   </div>
 </template>
 
 <script>
-  import Navegacion from '@/components/Navegacion'
+  import Navegacion from '@/components/Navegacion.vue'
+  // import BaseForm from './components/BaseForm.vue';
   export default {
     components: {
-      Navegacion
+      Navegacion,
+      // BaseForm
     }
   }
 </script>
@@ -21,6 +24,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  text-align: center;
 }
 
 nav {
