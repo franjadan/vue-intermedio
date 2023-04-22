@@ -1,7 +1,7 @@
 <template>
     <div id="tarea">
         <div>
-            <h3>{{ titulo }} <button @click="$emit('eliminarTarea')">Eliminar</button></h3>
+            <h3>{{ titulo }} <button @click="$emit('eliminarItem')">Eliminar</button></h3>
         </div>
     </div>
 </template>

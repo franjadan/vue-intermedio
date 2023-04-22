@@ -6,37 +6,29 @@
         <br/>
         <br/>
         <input type="search" placeholder="Filtrar items" v-model="filtroItem">
-        <Tarea 
+        <ul>
+            <li 
             v-for="(item, $indice) in itemsFiltradas" 
             :key="item.id" 
-            :titulo="item.title" 
-            @eliminarItem="eliminarItem($indice)"
-        ></Tarea>
+            @eliminarItem="eliminarItem($indice)">
+                {{ item.title }}
+            </li>
+        </ul>
     </div>
 </template>
 
 <script>
-    import todoService from '../services/todoService.js';
-    import Tarea from '@/components/Tarea.vue';
+    import postService from '../services/postService';
     import { crudItemsMixin } from '../mixins/crudItems.js';
+
     export default {
-        name: 'Tareas',
+        name: 'PostsList',
         mixins: [
             crudItemsMixin
         ],
         created(){
-            /*
-            fetch('https://jsonplaceholder.typicode.com/todos')
-                .then(respuesta => respuesta.json())
-                    .then(datos => this.items = datos)
-            .catch(error => console.error(error))
-            */
-
-            return todoService.get()
+            return postService.get()
                 .then(resultado => this.items = resultado.data);
         },
-        components: {
-            Tarea
-        }
     }
 </script>

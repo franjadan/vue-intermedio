@@ -48,6 +48,14 @@ requireComponent.keys().forEach(fileName => {
   )
 })
 
+//Esto se lanzaria en cada componente ¡¡Cuidado!!
+/*
+Vue.mixins({
+  mounted() {
+  }
+});
+*/
+
 new Vue({
   router,
   store,
