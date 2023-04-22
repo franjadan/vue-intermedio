@@ -12,12 +12,14 @@
             :titulo="item.title" 
             @eliminarItem="eliminarItem($indice)"
         ></Tarea>
+        <TareaDetalles />
     </div>
 </template>
 
 <script>
     import todoService from '../services/todoService.js';
     import Tarea from '@/components/Tarea.vue';
+    import TareaDetalles from './TareaDetalles.vue';
     import { crudItemsMixin } from '../mixins/crudItems.js';
     export default {
         name: 'Tareas',
@@ -36,7 +38,8 @@
                 .then(resultado => this.items = resultado.data);
         },
         components: {
-            Tarea
+            Tarea,
+            TareaDetalles,
         }
     }
 </script>
