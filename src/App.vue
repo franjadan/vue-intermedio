@@ -2,7 +2,7 @@
   <div id="app">
       <Navegacion></Navegacion>
       <!--<BaseForm></BaseForm>-->
-    <router-view/>
+      <RouterView/>
   </div>
 </template>
 
