@@ -16,14 +16,20 @@
 </template>
 
 <script>
+    import todoService from '../services/todoService.js';
     import Tarea from '@/components/Tarea.vue';
     export default {
         name: 'Tareas',
         created(){
+            /*
             fetch('https://jsonplaceholder.typicode.com/todos')
                 .then(respuesta => respuesta.json())
                     .then(datos => this.tareas = datos)
             .catch(error => console.error(error))
+            */
+
+            return todoService.get()
+                .then(resultado => this.tareas = resultado.data);
         },
         data() {
             return {
